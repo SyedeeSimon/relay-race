@@ -2,6 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## How to download and save the graphql schema 
+
+Install get-graphql-schema. Follow: https://www.npmjs.com/package/get-graphql-schema
+Once you have installed get-graphql-schema run the following command and this will simply download and save the graphql schema into the schema.graphql file.
+```
+get-graphql-schema https://swapi-graphql.netlify.app/.netlify/functions/index >  schema.graphql
+```
+
+
 ## Available Scripts
 
 In the project directory, you can run:
