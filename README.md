@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Flow
+This project is using [flow](https://flow.org/) to perform static type checking. To explore how flow was integrated and enabled in this project refer to [create-react-app/adding-flow](https://create-react-app.dev/docs/adding-flow/). This quick introduction to flow on [medium](https://medium.com/free-code-camp/why-use-static-types-in-javascript-part-1-8382da1e0adb) is really helpful.
+To enable flow on WebStorm IDE refer to: [WebStorm/Flow](https://www.jetbrains.com/help/webstorm/using-the-flow-type-checker.html)
+
+## Absolute Import
+This project is configured to work with absolute import rather than relative import. The `src` folder within the top-level project directory is the root/base of the absolute path. So each import statement will look like `"path/to/your/component"` where `path` is a sub folder within `src`.
+To learn more on absolute imports: [create-react-app.dev/docs](https://create-react-app.dev/docs/importing-a-component/#absolute-imports), [bezkoder.com](https://www.bezkoder.com/absolute-import-react/) 
+
 ## How to download and save the graphql schema 
 
 Install get-graphql-schema. Follow: https://www.npmjs.com/package/get-graphql-schema

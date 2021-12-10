@@ -1,4 +1,6 @@
-import React from 'react';
+// @flow
+
+import React, {type Node} from 'react';
 import './App.css';
 import graphql from 'babel-plugin-relay/macro';
 import {
@@ -7,7 +9,7 @@ import {
   usePreloadedQuery,
 } from 'react-relay/hooks';
 
-import RelayEnvironment from './relay-environment/RelayEnvironment';
+import RelayEnvironment from 'relay-environment/RelayEnvironment';
 
 const { Suspense } = React;
 
@@ -29,8 +31,6 @@ const preloadedQuery = loadQuery(RelayEnvironment, InitialFilmQuery, {
   /* query variables */
 });
 
-console.log('preloadedQuery ', preloadedQuery);
-
 // Inner component that reads the preloaded query results via `usePreloadedQuery()`.
 // This works as follows:
 // - If the query has completed, it returns the results of the query.
@@ -51,12 +51,17 @@ function App(props) {
   );
 }
 
+const greetings = (name: string):string  => {
+    return `hello ${name}`;
+}
+
 // The above component needs to know how to access the Relay environment, and we
 // need to specify a fallback in case it suspends:
 // - <RelayEnvironmentProvider> tells child components how to talk to the current
 //   Relay Environment instance
 // - <Suspense> specifies a fallback in case a child suspends.
-function AppRoot(props) {
+function AppRoot(): Node {
+    console.log(greetings('Simon'));
   return (
       <RelayEnvironmentProvider environment={RelayEnvironment}>
         <Suspense fallback={'Loading...'}>
